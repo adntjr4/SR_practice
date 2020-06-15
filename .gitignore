@@ -1,0 +1,17 @@
+# ignore pycache files
+__pycache__/*
+
+# ignore data files
+data/*
+
+# ignore virtualenv file
+venv/*
+venv.cmd
+
+# ignore trained model file
+model/*
+
+# ignore temp file
+temp/*
+
+
