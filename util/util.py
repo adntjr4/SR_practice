@@ -3,6 +3,7 @@ import torch
 import torchvision.transforms.functional as FT
 import torchvision.transforms as tr
 
+
 def tensor_to_pil_overcutting(img):
     # overflow cutting
     c, w, h = img.shape
@@ -61,3 +62,10 @@ def get_psnr(img1, img2, d_type1=0, d_type2=0, normalize=None):
     mse = err_ychcr.pow(2).mean()
 
     return -10 * math.log10(mse)
+
+def net_name(net):
+    if net.__class__.__name__ == 'DataParallel':
+        return net.module.__class__.__name__
+    else:
+        return net.__class__.__name__
+

@@ -73,6 +73,9 @@ class SRDataSet(data.Dataset):
 
         self.transform = SRtransform(crop_size, upscale_factor, train, lr_upsize, in_d_type=in_d_type, out_d_type=out_d_type, normalize=normalize)
 
+    def get_name(self, index):
+        return self.img_list[index]
+
     def __getitem__(self, index):
         img = Image.open(self.dir + '/' + self.img_list[index])
         

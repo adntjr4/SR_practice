@@ -16,4 +16,4 @@ model/*
 logs/*
 
 # ignore temp file
-temp/*
+tmp/*
